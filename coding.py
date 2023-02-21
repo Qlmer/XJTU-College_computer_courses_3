@@ -47,20 +47,26 @@ def judge_turn_of_four(x):
     else:
         return False
 def judge_turn_of_four_two(x):
-'''
+    '''
     >>> judge_turn_of_four_two(1221)
     True
     >>> judge_turn_of_four_two(1234)
     False
     '''
+    def rever_number(x):
+        pre_y=x
+        inve_y=0
+        while pre_y > 0:
+            inve_y=pre_y%10+inve_y*10
+            pre_y=pre_y//10
+        return inve_y
     x=int(x)
     pre_x=x
-    inve_x=0
-    def rever_number(y):
-        if y > 0:
-            a=y%10
-            b=y//10
-            rever
+    inve_x= rever_number(x)
+    return pre_x==inve_x
+
+
+            
 def my_range_tri(x,y,z):
     '''
     >>> my_range_tri(234,456,213)
@@ -73,5 +79,25 @@ def my_range_tri(x,y,z):
 def money_transformer(n):
     '''
     >>> money_transformer(152)
-    100+50+1+1
+    152=1*100+1*50+0*20+0*10+0*5+2*1
+    '''
+    the_number=n
+    the_hundred=0
+    the_fifty=0
+    the_twenty=0
+    the_ten=0
+    the_five=0
+    the_one=0
+    the_hundred += n//100
+    n=n%100
+    the_fifty += n//50
+    n=n%50
+    the_ten+=n//10
+    n=n%10
+    the_twenty += n//20
+    n=n%20
+    the_five += n//5
+    n=n%5
+    the_one += n
+    print("%d=%d*100+%d*50+%d*20+%d*10+%d*5+%d*1" %(the_number,the_hundred,the_fifty,the_twenty,the_ten,the_five,the_one))
 
