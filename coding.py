@@ -74,6 +74,4 @@ def money_transformer(n):
     '''
     >>> money_transformer(152)
     100+50+1+1
-    '''
-
 
