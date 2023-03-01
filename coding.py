@@ -130,4 +130,42 @@ def gcd_2(x,y):
 
 
 
+def cu_pi(eps):
+    n=1
+    sum=0
+    while True:
+        if n%2!=0:
+            sum+=1/(2*n-1)
+            n+=1
+        if n%2==0:
+            sum-=1/(2*n-1)
+            n+=1
+        if 1/(2*n-1)<eps:
+            return 4*sum
 
+def iner_cu(m,n):
+    '''
+    iner_cu(3,7)
+    25
+    '''
+    if m > n:
+        m,n=n,m
+    while m <= n:
+        sum+=m
+        m+=1
+    return sum
+
+def is_prime(x):
+    '''
+    >>> is_prime(2)
+    True
+    >>> is_prime(4)
+    False
+    '''
+    for i in range(2,x//2+1):
+        if x%i==0 and x!=2:
+            return False
+    return True
+for j in range(2,101):
+    if is_prime(j) and is_prime(j+2) is True:
+        print('%d,%d'%(j,j+2))
