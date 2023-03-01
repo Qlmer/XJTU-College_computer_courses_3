@@ -101,3 +101,33 @@ def money_transformer(n):
     the_one += n
     print("%d=%d*100+%d*50+%d*20+%d*10+%d*5+%d*1" %(the_number,the_hundred,the_fifty,the_twenty,the_ten,the_five,the_one))
 
+def gcd(x,y):
+    '''
+    >>> gcd(15,5)
+    5
+    >>> gcd(23,7)
+    1
+    '''
+    if x < y:
+        x,y=y,x    
+    while True:
+        r = x%y
+        x,y=y,r
+        if y == 0:
+            return x
+def gcd_2(x,y):
+    '''
+    >>> gcd_2(15,5)
+    5
+    '''
+    if x < y:
+        x,y=y,x
+    r = x % y    
+    while r != 0:
+        x,y=y,r
+        r = x % y
+    return y
+
+
+
+
